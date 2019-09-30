@@ -9,7 +9,7 @@
           <b-card-img id="image" :src="require('assets/stdnt.png')" class="rounded-0"></b-card-img>
           <b-row no-gutters>
             <b-card-body>
-              <h1>HI {{username}}</h1>
+              <h1>Hi {{username}}</h1>
               <h3>Welcome to InDesign Secrets</h3>
             </b-card-body>
           </b-row>
@@ -19,23 +19,24 @@
   </div>
 </template>
 
-<style scoped>
+<style scoped lang="scss">
+@import"assets/colors.scss";
 #card {
-  margin-top: 30px;
-  margin-left: 400px;
+  margin-left: $margin-left !important;
+  margin-top: $margin-top !important; 
 }
 .jumbotron{
-    padding:20px;
-    text-align: center;
+    padding: $padding !important;
+    text-align: $text-align !important;
+    color: $primary !important;
 }
 #image {
-  width: 250px;
-  height: 220px;
+  width: $width !important;
+  height: $height !important;
 }
 </style>
 
 <script>
-import ROUTER from "router";
 export default {
   name: "card",
   data() {
@@ -45,4 +46,3 @@ export default {
   },
 };
 </script>
-

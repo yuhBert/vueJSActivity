@@ -7,52 +7,63 @@
       <div class="row">
         <div class="col">
           <center>
-            <b-card id="card">
+            <b-card
+              text-align
+              id="card1"
+              img-top
+              tag="article"
+              style="max-width: 40rem;"
+              class="mb-2"
+            >
               <table class="table">
                 <thead>
                   <tr>
                     <th scope="col">SUBJECT</th>
                     <th scope="col">TEACHER</th>
-                    <th scope="col">TIME </th>
+                    <th scope="col">TIME</th>
                     <th scope="col">DAY</th>
                     <th scope="col">VENUE</th>
                   </tr>
                 </thead>
-                <tbody>
-                  <ul>
-                    <li> {{subject}}</li>
-                    <li> {{techer}}</li>
-                    <li> {{time}}</li>
-                    <li> {{subject}}</li>
-                    <li> {{day}}</li>
-                    <li> {{venue}}</li>
-                    <!-- <li v-for="list">{{ content.subject}}</li> -->
-                  </ul>
-                  <hr>
+                <tbody v-for="(item, index) in this.rows" :key="index">
+                  <tr>
+                    <td>{{ item.subject }}</td>
+                    <td>{{ item.teacher }}</td>
+                    <td>{{ item.time }}</td>
+                    <td>{{ item.day }}</td>
+                    <td>{{ item.room }}</td>
+                  </tr>
                 </tbody>
               </table>
             </b-card>
           </center>
         </div>
         <div class="col">
-          <b-card id="card1">
-            <b-form-group >
-              <label id="Subject">Subject:</label>
-              <b-form-input v-model="content.subject" size="sm"></b-form-input>
-              <label id="teacher">Teacher:</label>
-              <b-form-input v-model="content.teacher" size="sm"></b-form-input>
-              <label id="time">Time:</label>
-              <b-form-input v-model="content.time" size="sm"></b-form-input>
-              <label id="time">Day:</label>
-              <b-form-input v-model="content.day" size="sm"></b-form-input>
-              <label id="venue">Venue:</label>
-              <b-form-input v-model="content.venue" size="sm"></b-form-input>
-              <br>
-              <center>
-                <b-button variant="primary" @click="submit">Add Subject</b-button>
-              </center>
-            </b-form-group>
-          </b-card>
+          <center>
+            <b-card
+              text-align
+              id="card"
+              img-top
+              tag="article"
+              style="max-width: 30rem;"
+              class="mb-2"
+            >
+              <b-form-group label-for="input-lg">
+                <label id="Subject">Subject:</label>
+                <b-form-input v-model="content.subject" id="subject" size="sm"></b-form-input>
+                <label id="teacher">Teacher:</label>
+                <b-form-input v-model="content.teacher" id="teacher" size="sm"></b-form-input>
+                <label id="time">Time:</label>
+                <b-form-input v-model="content.time" id="time" size="sm"></b-form-input>
+                <label id="time">Day:</label>
+                <b-form-input v-model="content.day" id="day" size="sm"></b-form-input>
+                <label id="room">Venue:</label>
+                <b-form-input v-model="content.room" id="room" size="sm"></b-form-input>
+                <br>
+                <b-button variant="primary" @click="addItem">Add Subject</b-button>
+              </b-form-group>
+            </b-card>
+          </center>
         </div>
       </div>
     </div>
@@ -61,43 +72,41 @@
 
 
 <style>
-/* #card {
-  margin-top: 20px;
-} */
 .jumbotron {
   padding: 20px;
   text-align: center;
-}
-#card {
-  width: 600px;
-}
-#card1 {
-  width: 400px;
-
 }
 </style>
 
 <script>
 export default {
-  data(){
+  data() {
     return {
+      rows: [],
       content: {
         subject: "",
         teacher: "",
         time: "",
         day: "",
-        venue: ""
+        room: ""
       }
     };
   },
   methods: {
-    submit: function(e) {
-      e.preventDefault();
-      sessionStorage.getItem("Subject", this.content.subject),
-        sessionStorage.getItem("Teacher", this.content.teacher),
-        sessionStorage.getItem("Time", this.content.time),
-        sessionStorage.getItem("Day", this.content.day),
-        sessionStorage.getItem("Venue", this.content.venue);
+    addItem() {
+      var object = {
+        subject: this.content.subject,
+        teacher: this.content.teacher,
+        time: this.content.time,
+        day: this.content.day,
+        room: this.content.room
+      };
+      this.rows.push(object);
+      this.content.subject = "";
+      this.content.teacher = "";
+      this.content.time = "";
+      this.content.day = "";
+      this.content.room = "";
     }
   }
 };

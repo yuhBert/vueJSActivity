@@ -8,24 +8,32 @@
         <hr>
         <div>
           <div class="row">
-            <label for="inputfname">Username:</label>
+            <label id="username" for="inputfname">Username:</label>
             <input
               v-model="content.username"
               class="form-control"
               name="username"
               placeholder="Enter Username"
+              required
             >
           </div>
           <br>
           <div class="row">
             <br>
-            <label for="inputEmail">Email:</label>
-            <input type="email" class="form-control" v-model="content.email" placeholder="Enter Email">
+            <label id="email" for="inputEmail">Email:</label>
+            <input
+              required
+              type="email"
+              class="form-control"
+              v-model="content.email"
+              placeholder="Enter Email"
+            >
           </div>
           <br>
           <div class="row">
-            <label for="inputPassword">Password:</label>
+            <label id="pass" for="inputPassword">Password:</label>
             <input
+              required
               type="password"
               v-model="content.password"
               class="form-control"
@@ -38,8 +46,9 @@
             <br>
           </div>
           <div class="row">
-            <label for="inputConPassword">Confirm Password:</label>
+            <label id="conpass" for="inputConPassword">Confirm Password:</label>
             <input
+              required
               type="password"
               class="form-control"
               id="inputConPassword"
@@ -50,16 +59,11 @@
             <br>
           </div>
         </div>
-        <button
-          id="btnSubmit"
-          type="submit"
-          class="btn btn-primary"
-          @click="submit"
-        >
+        <button id="btnSubmit" type="submit" class="btn btn-primary" @click="submit">
           <h6>Register</h6>
         </button>
         <br>
-        <p>Already have an account?</p>
+        <p id="had">Already have an account?</p>
         <router-link to="/Login">Login</router-link>
         <br>
       </form>
@@ -67,16 +71,24 @@
   </center>
 </template>
 <style scoped lang="scss">
-// @import"assets/colors.scss";
-
-// #username{
+@import "assets/colors.scss";
+// #username {
 //   color: $primary !important;
 // }
-// #pass{
+// #pass {
 //   color: $primary !important;
+// }
+// #email {
+//   color: $primary !important;
+// }
+// #conpass {
+//   color: $primary !important;
+// }
+#had{
+  color: $primary !important;
+}
 </style>
 <script>
-import ROUTER from "router";
 import AUTH from "services/auth";
 export default {
   data() {
@@ -94,9 +106,15 @@ export default {
     submit: function(e) {
       e.preventDefault();
       sessionStorage.setItem("Username", this.content.username),
-        sessionStorage.setItem("Email", this.content.email),
-        sessionStorage.setItem("Password", this.content.password),
-        AUTH.register(this.content.username, this.content.password);
+      sessionStorage.setItem("Email", this.content.email),
+      sessionStorage.setItem("Password", this.content.password);
+        if(this.content.username == '' || this.content.email == '' || this.content.password == '' || this.content.conpassword == ''){
+          alert("Input is empty.");
+        }else if(this.content.password != this.content.conpassword){
+          alert("Passwrod missmatch!")
+        }else{
+          AUTH.register(this.content.username, this.content.password);
+        }
     }
   }
 };
