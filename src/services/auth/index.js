@@ -28,6 +28,13 @@ export default {
     logout() {
         this.user = null
         ROUTER.push('/Login')
+    },
+    update() {
+        this.user = null
+        ROUTER.push('/Update')
+    },
+    save() {
+        this.user = null
+        ROUTER.push('/PersonalInfo')
     }
-
 }

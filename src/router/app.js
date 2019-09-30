@@ -36,7 +36,14 @@ export default {
         component: resolve => require(['modules/PersonalInfo.vue'], resolve),
         meta: {
             tokenRequired: false
-        },
-
+        }
+    },
+    {
+        path: '/Update',
+        name: 'UpdateInfo',
+        component: resolve => require(['modules/Update.vue'], resolve),
+        meta: {
+            tokenRequired: false
+        }
     }]
 }

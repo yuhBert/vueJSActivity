@@ -17,6 +17,8 @@
                 <h6>Email: {{email}}</h6>
                 <h6 type="password">Password: {{password}}</h6>
               </b-card-text>
+              <center><p id="edit">Do you want to edit your account?</p >
+              <router-link to="/Update">Update Profile</router-link></center>
             </b-card-body>
           </b-col>
         </b-row>
@@ -34,13 +36,14 @@
 #card {
   margin-top: 50px;
   margin-left: 380px;
-  //  color: $primary !important;
 }
-
+#edit{
+  color: $danger !important
+}
 </style>
 <script>
+import AUTH from 'services/auth'
 export default {
-  // name: "container",
   data() {
     return {
       username: sessionStorage.getItem("Username"),
@@ -48,5 +51,10 @@ export default {
       password: sessionStorage.getItem("Password")
     };
   },
+  methods: {
+    update: function(){
+      AUTH.update(this.username,this.email, this.password)
+    }
+  }
 };
 </script>
