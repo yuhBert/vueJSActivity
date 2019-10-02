@@ -9,28 +9,28 @@ export default {
       menu: [
         {
           header: true,
-          title: "Main Navigation",
+          title: 'Main Navigation',
           hiddenOnCollapse: true
         },
         {
           href: "/Dashboard",
           title: "Dashboard",
-          icon: "fa fa-chart-area",
+          icon: 'fas fa-tachometer-alt',
         },
         {
           href: "/Subjects",
           title: "Subjects",
-          icon: "fa fa-chart-area",
+          icon: 'fas fa-book',
         },
         {
           href: "/PersonalInfo",
           title: "Personal Info",
-          icon: "fa fa-chart-area",
+          icon: 'fas fa-user',
         },
         {
           href: "/Login",
           title: "Logout",
-          icon: "fa fa-chart-area",
+          icon: 'fas fa-sign-out-alt',
         }
       ]
     };

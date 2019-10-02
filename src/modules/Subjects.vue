@@ -71,10 +71,11 @@
 </template>
 
 
-<style>
-.jumbotron {
-  padding: 20px;
-  text-align: center;
+<style scoped lang="scss">
+@import "assets/colors.scss";
+.jumbotron{
+    padding: $jumbotronpadding !important;
+    text-align: $text-align !important;
 }
 </style>
 

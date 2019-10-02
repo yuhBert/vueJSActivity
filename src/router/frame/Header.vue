@@ -1,22 +1,18 @@
 <template>
   <div>
-      <b-navbar toggleable="lg" type="dark" variant="info">
-    <b-navbar-brand href="#" id="title">InDesign Secrets</b-navbar-brand>
-    
-    <v-spacer></v-spacer>
-    
-    
+    <b-card title="Card Title" no-body>
+      <b-card-header header-tag="nav">
+        <b-nav card-header tabs>
+          <b-nav-item active>LIT-U</b-nav-item>
+          <b-nav-item @click="redirect('/Login')" id="login">Login</b-nav-item>
+          <b-nav-item @click="redirect('/Register')" id="signup">Sign Up</b-nav-item>
+        </b-nav>
+      </b-card-header>
 
-    <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
-  <b-collapse id="nav-collapse" is-nav>
-      <b-navbar-nav class="ml-auto">
-          <b-navbar-nav>
-            <b-nav-item @click="redirect('/Login')" id="login">Login</b-nav-item>
-            <b-nav-item @click="redirect('/Register')"  id="signup">Sign Up</b-nav-item>
-          </b-navbar-nav>
-        </b-navbar-nav>
-      </b-collapse>
-    </b-navbar>
+      <b-card-body id="background">
+        <b-card-text class="text-center">LUCIFER INSTITUTE OF TECHNOLOGY UNIVERSITY</b-card-text>
+      </b-card-body>
+    </b-card>
   </div>
 </template>
 <style scoped lang="scss">
@@ -24,10 +20,12 @@
 #title {
   color: $warning !important;
 }
- #login{
-          color: $warning !important;
-      }
-
+#login {
+  color: $warning !important;
+}
+#background {
+  background-color: #ffc299;
+}
 </style>
 <script>
 import ROUTER from "router";

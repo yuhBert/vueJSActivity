@@ -7,7 +7,7 @@
       <b-card no-body class="overflow-hidden" style="max-width: 540px;">
         <b-row no-gutters>
           <b-col md="6">
-            <b-card-img :src="require('assets/stdnt.png')" class="rounded-0"></b-card-img>
+            <b-card-img id="image" :src="require('assets/user.jpg')" class="rounded-0"></b-card-img>
           </b-col>
           <b-col md="6">
             <b-card-body title="Personal Info">
@@ -30,15 +30,20 @@
 <style scoped lang="scss">
 @import "assets/colors.scss";
 .jumbotron{
-    padding: 20px;
-    text-align: center;
+    padding: $jumbotronpadding !important;
+    text-align: $text-align !important;
 }
 #card {
-  margin-top: 50px;
-  margin-left: 380px;
+  margin-top: $cardmargintop !important;
+  margin-left: $cardmarginleft !important;
 }
 #edit{
   color: $danger !important
+}
+
+#image {
+  width: $userwidth !important;
+  height: $userheight !important;
 }
 </style>
 <script>

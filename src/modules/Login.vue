@@ -32,10 +32,10 @@
             >
           </div>
           <br>
-          <button id="btnLogin" class="btn btn-primary" @click="submit">
+          <button id="btnLogin" class="btn btn-outline-primary" @click="submit">
             <h6>Login</h6>
           </button>
-          <br>
+          <br><br>
         </form>
       </div>
     </center>

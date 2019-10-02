@@ -38,6 +38,14 @@
   </div>
 </template>
 
+
+<style scoped lang="scss">
+@import "assets/colors.scss";
+.jumbotron{
+    padding: $jumbotronpadding !important;
+    text-align: $text-align !important;
+}
+</style>
 <script>
 import ROUTER from "router";
 import AUTH from "services/auth";
