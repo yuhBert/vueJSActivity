@@ -16,13 +16,11 @@
   </div>
 </template>
 <style scoped lang="scss">
-@import "assets/colors.scss";
+@import "assets/style.scss";
 #title {
-  color: $warning !important;
+  color: $primary !important;
 }
-#login {
-  color: $warning !important;
-}
+
 #background {
   background-color: #ffc299;
 }

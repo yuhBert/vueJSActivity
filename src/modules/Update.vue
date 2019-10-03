@@ -8,7 +8,7 @@
       <div class="col-md-4">
         <div class="container">
           <div class="card">
-            <div class="card-header">UPDATE INFO</div>
+           
             <div class="card-body">
               <div class="form-group">
                 <label for="username" class="bmd-label-floating">Username</label>
@@ -40,10 +40,11 @@
 
 
 <style scoped lang="scss">
-@import "assets/colors.scss";
+@import "assets/style.scss";
 .jumbotron{
     padding: $jumbotronpadding !important;
     text-align: $text-align !important;
+    background-color:$jumbo !important;
 }
 </style>
 <script>

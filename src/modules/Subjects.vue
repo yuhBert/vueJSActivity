@@ -36,10 +36,7 @@
                 </tbody>
               </table>
             </b-card>
-          </center>
-        </div>
-        <div class="col">
-          <center>
+        
             <b-card
               text-align
               id="card"
@@ -72,10 +69,11 @@
 
 
 <style scoped lang="scss">
-@import "assets/colors.scss";
+@import "assets/style.scss";
 .jumbotron{
     padding: $jumbotronpadding !important;
     text-align: $text-align !important;
+    background-color:$jumbo !important;
 }
 </style>
 

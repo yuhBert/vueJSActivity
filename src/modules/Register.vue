@@ -8,7 +8,7 @@
         <hr>
         <div>
           <div class="row">
-            <label for="inputfname">Username:</label>
+            <label for="inputfname" id="text">Username:</label>
             <input
               v-model="content.username"
               class="form-control"
@@ -19,12 +19,12 @@
           <br>
           <div class="row">
             <br>
-            <label for="inputEmail">Email:</label>
+            <label for="inputEmail" id="text">Email:</label>
             <input type="email" class="form-control" v-model="content.email" placeholder="Enter Email">
           </div>
           <br>
           <div class="row">
-            <label for="inputPassword">Password:</label>
+            <label for="inputPassword" id="text">Password:</label>
             <input
               type="password"
               v-model="content.password"
@@ -38,7 +38,7 @@
             <br>
           </div>
           <div class="row">
-            <label for="inputConPassword">Confirm Password:</label>
+            <label for="inputConPassword" id="text">Confirm Password:</label>
             <input
               type="password"
               class="form-control"
@@ -67,13 +67,11 @@
   </center>
 </template>
 <style scoped lang="scss">
-@import"assets/colors.scss";
+@import"assets/style.scss";
+ #text{
+  color: $white !important;
+ }
 
-// #username{
-//   color: $primary !important;
-// }
-// #pass{
-//   color: $primary !important;
 #had{
   color: $primary !important;
 }

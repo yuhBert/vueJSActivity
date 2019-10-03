@@ -42,13 +42,13 @@
   </div>
 </template>
 <style scoped lang="scss">
-@import "assets/colors.scss";
+@import "assets/style.scss";
 
 #username {
-  color: $primary !important;
+  color: $white !important;
 }
 #pass {
-  color: $primary !important;
+  color: $white !important;
 }
 </style>
 <script>

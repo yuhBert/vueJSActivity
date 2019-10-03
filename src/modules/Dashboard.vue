@@ -1,8 +1,5 @@
 <template>
   <div>
-    <div>
-      <h1>Dashboard</h1>
-    </div>
     <div id="card">
       <b-card no-body class="overflow-hidden" style="max-width: 1000px;">
         <b-card-img id="image" :src="require('assets/dash.jpg')" class="rounded-0"></b-card-img>
@@ -18,7 +15,7 @@
 </template>
 
 <style scoped lang="scss">
-@import "assets/colors.scss";
+@import "assets/style.scss";
 #card {
   margin-left: $margin-left !important;
   margin-top: $margin-top !important;

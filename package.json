@@ -55,5 +55,17 @@
   "browserslist": [
     "> 1%",
     "last 2 versions"
-  ]
+  ],
+  "description": "vueJS",
+  "main": "babel.config.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yuhBert/vueJSActivity.git"
+  },
+  "author": "Yubert Mariscal",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yuhBert/vueJSActivity/issues"
+  },
+  "homepage": "https://github.com/yuhBert/vueJSActivity#readme"
 }
