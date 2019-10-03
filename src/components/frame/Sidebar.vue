@@ -1,9 +1,17 @@
 <template>
   <sidebar-menu :menu="menu" />
 </template>
+ <style scoped >
+.v-sidebar-menu{
+  height: 94%;
+  margin-top: 56px;
+}
+ 
+ </style>
  
 <script>
 export default {
+   name:'side',
   data() {
     return {
       menu: [
@@ -28,7 +36,7 @@ export default {
           icon: 'fas fa-user',
         },
         {
-          href: "/Login",
+          href: "/confirmLogout",
           title: "Logout",
           icon: 'fas fa-sign-out-alt',
         }

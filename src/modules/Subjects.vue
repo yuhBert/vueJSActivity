@@ -23,6 +23,7 @@
                     <th scope="col">TIME</th>
                     <th scope="col">DAY</th>
                     <th scope="col">VENUE</th>
+                     <th scope="col">ACTION</th>
                   </tr>
                 </thead>
                 <tbody v-for="(item, index) in this.rows" :key="index">
@@ -32,6 +33,7 @@
                     <td>{{ item.time }}</td>
                     <td>{{ item.day }}</td>
                     <td>{{ item.room }}</td>
+                      <td><b-button class="btn btn-primary" @click="remove(item.subject)">REMOVE</b-button></td>
                   </tr>
                 </tbody>
               </table>
@@ -106,6 +108,10 @@ export default {
       this.content.time = "";
       this.content.day = "";
       this.content.room = "";
+    },
+    remove(sub){
+      this.rows.splice(0,1)
+      console.log(sub)
     }
   }
 };
