@@ -23,7 +23,7 @@
                     <th scope="col">TIME</th>
                     <th scope="col">DAY</th>
                     <th scope="col">VENUE</th>
-                     <th scope="col">ACTION</th>
+                  
                   </tr>
                 </thead>
                 <tbody v-for="(item, index) in this.rows" :key="index">
@@ -33,7 +33,7 @@
                     <td>{{ item.time }}</td>
                     <td>{{ item.day }}</td>
                     <td>{{ item.room }}</td>
-                      <td><b-button class="btn btn-primary" @click="remove(item.subject)">REMOVE</b-button></td>
+                    
                   </tr>
                 </tbody>
               </table>
@@ -59,7 +59,12 @@
                 <label id="room">Venue:</label>
                 <b-form-input v-model="content.room" id="room" size="sm"></b-form-input>
                 <br>
+                <br>
+                
                 <b-button variant="primary" @click="addItem">Add Subject</b-button>
+                <b-button variant="primary" @click="remove">Remove Subject</b-button>
+                
+                <b-form-input v-model="delInfo.delCourse" id="room" size="sm"></b-form-input>
               </b-form-group>
             </b-card>
           </center>
@@ -83,6 +88,9 @@
 export default {
   data() {
     return {
+      delInfo:{
+        delCourse :""
+      },
       rows: [],
       content: {
         subject: "",
@@ -109,9 +117,13 @@ export default {
       this.content.day = "";
       this.content.room = "";
     },
-    remove(sub){
-      this.rows.splice(0,1)
-      console.log(sub)
+    remove(){
+      for(let i=0;i<this.rows.length;i++){
+        if(this.rows[i].subject===this.delInfo.delCourse){
+          this.rows.splice(this.rows.indexOf(this.rows[i]),1)
+        }
+      }
+      
     }
   }
 };

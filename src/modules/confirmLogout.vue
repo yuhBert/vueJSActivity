@@ -3,7 +3,7 @@
   <div id="card">
       <center>
     <h1>Are you sure you want to log out?</h1>
-    <b-button @click="logOut" variant="outline-primary">Yes</b-button>
+    <b-button @click="logout" variant="outline-primary">Yes</b-button>
     </center>
   </div>
 </template>
@@ -19,13 +19,20 @@
 import AUTH from "services/auth";
 // import ROUTER from "router";
 export default {
-  auth: AUTH,
+  data(){
+    return{
+      auth: AUTH,
+    }
+  }, 
   methods: {
-    logOut(e) {
-      e.preventDefault();
-      AUTH.logout();
+    logout(e){
+      e.preventDefault()
+ AUTH.logout();
+    }
+
+     
       // ROUTER.push("/login");
     }
-  }
+  
 };
 </script>

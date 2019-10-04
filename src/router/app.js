@@ -45,5 +45,15 @@ export default {
         meta: {
             tokenRequired: false
         }
-    }]
+
+    },
+    {
+        path: '/confirmLogout',
+        name: 'confirmLogout',
+        component: resolve => require(['modules/confirmLogout.vue'], resolve),
+        meta: {
+            tokenRequired: false
+        }
+    }
+]
 }

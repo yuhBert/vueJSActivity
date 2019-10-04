@@ -31,11 +31,11 @@ export default {
         ROUTER.push('/Login')
     },
     update() {
-        this.user = null
+        // this.user = null
         ROUTER.push('/Update')
     },
     save() {
-        this.user = null
+        // this.user = null
         ROUTER.push('/PersonalInfo')
     }
 }
