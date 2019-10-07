@@ -53,6 +53,7 @@
 </style>
 <script>
 import AUTH from 'services/auth'
+import jquery from "jquery";
 export default {
   data() {
     AUTH
@@ -65,6 +66,18 @@ export default {
     submit: function(e) {
       e.preventDefault();
       AUTH.login(this.username, this.password)
+      let link = `http://localhost:3000/db/retrieve/${this.content.username}`;
+      jquery
+        .ajax({
+          url: link,
+          method: 'POST',
+          headers: {
+            'Access-Control-Allow-Origin': '*'
+          }
+        })
+        .then(response => {
+          alert(response.username);
+        });
     },
 
   }

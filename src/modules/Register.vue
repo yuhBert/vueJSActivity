@@ -79,6 +79,8 @@
 <script>
 // import ROUTER from "router";
 import AUTH from "services/auth";
+// import ROUTER from "router";
+import jquery from "jquery";
 export default {
   data() {
     return {
@@ -98,7 +100,22 @@ export default {
         sessionStorage.setItem("Email", this.content.email),
         sessionStorage.setItem("Password", this.content.password),
         AUTH.register(this.content.username, this.content.password);
+        let link = `http://localhost:3000/db/insert/${this.content.username}/${this.content.email}/${this.content.password}`;
+      jquery
+        .ajax({
+          url: link,
+          method: 'GET',
+          headers: {
+            'Access-Control-Allow-Origin': '*'
+          }
+        })
+        .then(response => {
+          alert(response.username);
+        });
     }
   }
 };
 </script>
+
+      
+      
