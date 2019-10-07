@@ -1,10 +1,17 @@
-//import AUTH from '../services/auth'
+import AUTH from 'services/auth'
 
 let beforeEnter = (to, from, next) => {
     //AUTH.currentPath = to.path
-    next()
+    if(to.meta.tokenRequired === true){
+        if(AUTH.user != null){
+            next()
+        }else{
+            next({ path: '/Login'})
+        }
+    }else{
+        next()
+    }
 }
-
 var devRoutes = []
 let app = require('./app.js')
 devRoutes = devRoutes.concat(app.default.routes)

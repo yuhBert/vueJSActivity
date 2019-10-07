@@ -4,7 +4,7 @@
       <b-card-header  header-tag="nav">
         <b-nav  card-header tabs>
           <b-nav-item  active>LIT-U</b-nav-item>
-          <b-nav-item @click="redirect('/Login')"  v-if="auth.user ===null"  id="login">Login</b-nav-item>
+          <b-nav-item @click="redirect('/Login')"  v-if="auth.user ===null"  id="login">Sign In</b-nav-item>
           <b-nav-item @click="redirect('/Register')"  v-if="auth.user ===null"  id="signup">Sign Up</b-nav-item>
         </b-nav>
       </b-card-header>
