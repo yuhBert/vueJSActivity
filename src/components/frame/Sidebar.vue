@@ -31,6 +31,11 @@ export default {
           icon: 'fas fa-book',
         },
         {
+          href: "/Timeline",
+          title: "Timeline",
+          icon: 'fas fa-book',
+        },
+        {
           href: "/PersonalInfo",
           title: "Personal Info",
           icon: 'fas fa-user',

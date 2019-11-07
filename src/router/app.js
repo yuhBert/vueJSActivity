@@ -31,6 +31,14 @@ export default {
         }
     },
     {
+        path: '/Timeline',
+        name: 'Timeline',
+        component: resolve => require(['modules/Timeline.vue'], resolve),
+        meta: {
+            tokenRequired: false
+        }
+    },
+    {
         path: '/PersonalInfo',
         name: 'PersonalInfo',
         component: resolve => require(['modules/PersonalInfo.vue'], resolve),
